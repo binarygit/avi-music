@@ -1,11 +1,13 @@
-<h1>Songs</h1>
-<div class='container' data-controller='music'>
-  <ul class='songs-container'>
-    <% @songs.each do |song| %>
-      <li><%= tag.a song.title, 'data-action': 'click->music#play', href: '#', 'data-href': ('songs/' + song.title) %></li>
-    <% end %>
-  </ul>
-  <div id="audio-container" data-music-target="audioContainer">
-    <audio data-controller="mediaplayer" controls src=""></audio>
+<main class="main">
+  <h1>Songs</h1>
+  <div class='container paper' data-controller='music'>
+    <ul class='songs-container background-primary'>
+      <% @songs.each do |song| %>
+        <li><%= tag.a song.title, class: 'paper-btn btn-primary', 'data-action': 'click->music#play', href: '#', 'data-href': ('songs/' + song.title) %></li>
+      <% end %>
+    </ul>
+    <div id="audio-container" data-music-target="audioContainer">
+      <audio data-controller="mediaplayer" controls src=""></audio>
+    </div>
   </div>
-</div>
+</main>

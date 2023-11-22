@@ -1,0 +1,29 @@
+body {
+  background: #252526;
+  color: #fff;
+}
+
+.main {
+  margin: 0 auto;
+  width: 960px;
+}
+
+.songs-container {
+  height: 40vh;
+  overflow: scroll;
+}
+
+.container {
+  background: #181a1b;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    margin: 0;
+    width: 100%;
+  }
+
+  .songs-container {
+    padding: 5px;
+    height: 60vh;
+  }
