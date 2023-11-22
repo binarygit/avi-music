@@ -1,9 +1,9 @@
-<main class="main">
+<main class="main" data-turbo="false">
   <h1>Songs</h1>
   <div class='container paper' data-controller='music'>
     <ul class='songs-container background-primary'>
       <% @songs.each do |song| %>
-        <li><%= tag.a song.title, class: 'paper-btn btn-primary', 'data-action': 'click->music#play', href: '#', 'data-href': ('songs/' + song.title) %></li>
+        <li><%= tag.a song.title, id: song.title, class: 'song paper-btn btn-primary', 'data-action': 'click->music#play', href: "##{song.title}", 'data-href': ('songs/' + song.title) %></li>
       <% end %>
     </ul>
     <div id="audio-container" data-music-target="audioContainer">

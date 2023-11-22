@@ -4,11 +4,7 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["audioContainer"];
 
-  connect() {
-  }
-
   play(e) {
-    e.preventDefault()
     this.pauseCurrentSong();
     this.playSelectedSong(e.currentTarget.dataset.href);
   }
@@ -26,7 +22,6 @@ export default class extends Controller {
     newAudioElem.setAttribute("controls", "");
 
     this.audioContainerTarget.appendChild(newAudioElem);
-    console.log('hello')
 
     newAudioElem.play();
   }

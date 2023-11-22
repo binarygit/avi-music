@@ -11,10 +11,15 @@ body {
 .songs-container {
   height: 40vh;
   overflow: scroll;
+  scroll-behavior: smooth;
 }
 
 .container {
   background: #181a1b;
+}
+
+.song:target {
+  background: #FF7377;
 }
 
 @media screen and (max-width: 600px) {
@@ -27,3 +32,4 @@ body {
     padding: 5px;
     height: 60vh;
   }
+}
