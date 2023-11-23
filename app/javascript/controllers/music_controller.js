@@ -5,6 +5,7 @@ export default class extends Controller {
   static targets = ["audioContainer", "nowPlayingDisplayer"];
 
   play(e) {
+    this.addCurrentSongClassTo(e.currentTarget)
     this.pauseCurrentSong();
     this.playSelectedSong(e.currentTarget.dataset.href);
     this.displayNowPlaying(e.currentTarget.dataset.href);
@@ -30,5 +31,13 @@ export default class extends Controller {
   displayNowPlaying(songName) {
     let html = `Now Playing: <span class='text-danger'>${songName}</span>`;
     this.nowPlayingDisplayerTarget.innerHTML = html;
+  }
+
+  addCurrentSongClassTo(elem) {
+    let nowPlaying = document.querySelector('.current-song')
+    if (nowPlaying) {
+      nowPlaying.classList.remove('current-song')
+    }
+    elem.classList.add('current-song')
   }
 }

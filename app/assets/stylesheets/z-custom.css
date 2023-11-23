@@ -16,10 +16,28 @@ body {
 
 .container {
   background: #181a1b;
+  color: white;
 }
 
 .song:target {
-  background: #FF7377;
+  animation-name: fade-text;
+  animation-duration: 5s;
+}
+
+.current-song {
+  background: #FF7377 !important;
+}
+
+@keyframes fade-text {
+  from {
+    background: #3944BC;
+    color: white;
+  }
+
+  to {
+    background: inherit;
+    color: inherit;
+  }
 }
 
 @media screen and (max-width: 600px) {
