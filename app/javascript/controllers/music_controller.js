@@ -7,7 +7,7 @@ export default class extends Controller {
   play(e) {
     this.pauseCurrentSong();
     this.playSelectedSong(e.currentTarget.dataset.href);
-    this.displayNowPlaying(e.currentTarget);
+    this.displayNowPlaying(e.currentTarget.dataset.href);
   }
 
   // private
@@ -27,8 +27,8 @@ export default class extends Controller {
     newAudioElem.play();
   }
 
-  displayNowPlaying(elem) {
-    let html = `Now Playing: <span class='text-danger'>${elem.dataset.href}</span>`;
+  displayNowPlaying(songName) {
+    let html = `Now Playing: <span class='text-danger'>${songName}</span>`;
     this.nowPlayingDisplayerTarget.innerHTML = html;
   }
 }
