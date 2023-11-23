@@ -2,14 +2,7 @@
   <h1>Songs</h1>
   <div class='container paper' data-controller='music'>
     <ul class='songs-container background-primary'>
-      <% @songs.each do |song| %>
-        <%= tag.li do %>
-          <%= tag.a song.title, id: song.title, 
-            class: 'song paper-btn btn-primary', 'data-action': 'click->music#play', 
-            'data-href': ('songs/' + song.title) %> 
-          <%= tag.a "~~~", href: "##{song.title}" %>
-          <% end %>
-      <% end %>
+        <%= render partial: "song", collection: @songs %>
     </ul>
     <div id="audio-container" data-music-target="audioContainer">
       <p id="now-playing" data-music-target="nowPlayingDisplayer">Click a song to play</p>
