@@ -41,6 +41,10 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  html {
+    font-size: 18px;
+  }
+
   .main {
     margin: 0;
     width: 100%;
@@ -49,5 +53,9 @@ body {
   .songs-container {
     padding: 5px;
     height: 60vh;
+  }
+
+  h1 {
+    margin: 3px;
   }
 }
