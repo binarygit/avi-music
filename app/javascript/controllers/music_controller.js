@@ -2,11 +2,12 @@ import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="music"
 export default class extends Controller {
-  static targets = ["audioContainer"];
+  static targets = ["audioContainer", "nowPlayingDisplayer"];
 
   play(e) {
     this.pauseCurrentSong();
     this.playSelectedSong(e.currentTarget.dataset.href);
+    this.displayNowPlaying(e.currentTarget);
   }
 
   // private
@@ -24,5 +25,10 @@ export default class extends Controller {
     this.audioContainerTarget.appendChild(newAudioElem);
 
     newAudioElem.play();
+  }
+
+  displayNowPlaying(elem) {
+    let html = `Now Playing: <span class='text-danger'>${elem.dataset.href}</span>`;
+    this.nowPlayingDisplayerTarget.innerHTML = html;
   }
 }
