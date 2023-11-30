@@ -44,6 +44,7 @@ export default class extends Controller {
 
     newAudioElem.setAttribute("src", songPath);
     newAudioElem.setAttribute("controls", "");
+    newAudioElem.setAttribute("data-action", "ended->music#next");
 
     this.audioContainerTarget.appendChild(newAudioElem);
 
