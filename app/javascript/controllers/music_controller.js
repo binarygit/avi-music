@@ -11,6 +11,28 @@ export default class extends Controller {
     this.displayNowPlaying(e.currentTarget.dataset.href);
   }
 
+  next() {
+    let currentSong = document.querySelector(".current-song")
+    if (!currentSong) return
+
+    let nextSongId = Number(currentSong.dataset.id) + 1
+    let nextSong = document.getElementById(`song_${nextSongId}`)
+    if (!nextSong) return
+
+    this.play({currentTarget: nextSong})
+  }
+
+  prev() {
+    let currentSong = document.querySelector(".current-song")
+    if (!currentSong) return
+
+    let prevSongId = Number(currentSong.dataset.id) - 1
+    let prevSong = document.getElementById(`song_${prevSongId}`)
+    if (!prevSong) return
+
+    this.play({currentTarget: prevSong})
+  }
+
   // private
   pauseCurrentSong() {
     let existingAudioElem = document.querySelector("audio");
