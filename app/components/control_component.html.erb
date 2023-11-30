@@ -1,0 +1,10 @@
+<turbo-frame id="controls">
+  <div id="audio-container" data-music-target="audioContainer">
+    <p id="now-playing" data-music-target="nowPlayingDisplayer">Click a song to play</p>
+    <audio data-controller="mediaplayer" controls src=""></audio>
+  </div>
+  <div>
+    <button class="paper-btn" data-action="click->music#prev">Prev</button>
+    <button class="paper-btn" data-action="click->music#next">Next</button>
+  </div>
+</turbo-frame>

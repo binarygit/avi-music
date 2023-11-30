@@ -1,16 +1,19 @@
-<main class="main" data-turbo="false">
+<main class="main">
   <h1>Songs</h1>
   <div class='container paper' data-controller='music'>
-    <ul class='songs-container background-primary'>
-        <%= render SongComponent.with_collection(@songs) %>
-    </ul>
-    <div id="audio-container" data-music-target="audioContainer">
-      <p id="now-playing" data-music-target="nowPlayingDisplayer">Click a song to play</p>
-      <audio data-controller="mediaplayer" controls src=""></audio>
-    </div>
-    <div>
-      <button class="paper-btn" data-action="click->music#prev">Prev</button>
-      <button class="paper-btn" data-action="click->music#next">Next</button>
-    </div>
+    <turbo-frame id="songs">
+      <%= form_with url: songs_path, method: 'GET', 
+          class: 'padding-small row background-primary' do |f| %>
+        <%= f.text_field :song_title, placeholder: 'Song title', class: 'margin-right-small' %>
+        <%= f.submit :search, class: 'margin-left-small paper-btn' %>
+      <% end %>
+      <%= button_to "Clear", songs_path, method: :get %>
+      
+      <ul class='songs-container background-primary'>
+          <%= render SongComponent.with_collection(@songs) %>
+      </ul>
+    </turbo-frame>
+
+    <%= render ControlComponent.new %>
   </div>
 </main>
