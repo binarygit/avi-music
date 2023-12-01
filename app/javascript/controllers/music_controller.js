@@ -6,17 +6,16 @@ export default class extends Controller {
 
   connect() {
     navigator.mediaSession.metadata = new MediaMetadata({
-      title: "Podcast Episode Title",
-      artist: "Podcast Host",
+      title: "Avi Track",
+      artist: "wooo Host",
       album: "Podcast Name",
-      artwork: [{ src: "http://139.59.31.175:80/me_with_kid_on_shoulders.jpg" }],
     });
-    navigator.mediaSession.setActionHandler('play', function() {});
-    navigator.mediaSession.setActionHandler('pause', function() {});
-    navigator.mediaSession.setActionHandler('seekbackward', function() {});
-    navigator.mediaSession.setActionHandler('seekforward', function() {});
-    navigator.mediaSession.setActionHandler('previoustrack', function() {});
-    navigator.mediaSession.setActionHandler('nexttrack', function() {});
+    navigator.mediaSession.setActionHandler('nexttrack', function() {
+      console.log('hello')
+    });
+    navigator.mediaSession.setActionHandler('previoustrack', function() {
+      console.log('bye')
+    });
   }
 
   play(e) {
