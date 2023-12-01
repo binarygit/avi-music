@@ -5,17 +5,18 @@ export default class extends Controller {
   static targets = ["audioContainer", "nowPlayingDisplayer"];
 
   connect() {
-    navigator.mediaSession.setActionHandler('nexttrack', function() {
-        console.log('> User clicked "Next Track" icon.');
-      this.next();
-    });
-
     navigator.mediaSession.metadata = new MediaMetadata({
       title: "Podcast Episode Title",
       artist: "Podcast Host",
       album: "Podcast Name",
-      artwork: [{ src: "podcast.jpg" }],
+      artwork: [{ src: "http://139.59.31.175:80/me_with_kid_on_shoulders.jpg" }],
     });
+    navigator.mediaSession.setActionHandler('play', function() {});
+    navigator.mediaSession.setActionHandler('pause', function() {});
+    navigator.mediaSession.setActionHandler('seekbackward', function() {});
+    navigator.mediaSession.setActionHandler('seekforward', function() {});
+    navigator.mediaSession.setActionHandler('previoustrack', function() {});
+    navigator.mediaSession.setActionHandler('nexttrack', function() {});
   }
 
   play(e) {
