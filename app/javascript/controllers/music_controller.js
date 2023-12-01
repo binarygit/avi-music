@@ -4,6 +4,20 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["audioContainer", "nowPlayingDisplayer"];
 
+  connect() {
+    navigator.mediaSession.setActionHandler('nexttrack', function() {
+        console.log('> User clicked "Next Track" icon.');
+      this.next();
+    });
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: "Podcast Episode Title",
+      artist: "Podcast Host",
+      album: "Podcast Name",
+      artwork: [{ src: "podcast.jpg" }],
+    });
+  }
+
   play(e) {
     this.addCurrentSongClassTo(e.currentTarget)
     this.pauseCurrentSong();
