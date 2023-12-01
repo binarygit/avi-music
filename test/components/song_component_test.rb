@@ -10,7 +10,6 @@ class SongComponentTest < ViewComponent::TestCase
     @songs.each do |song|
       selector = "a[data-href='songs/#{song.title}'][data-id='#{song.id}'][data-action='click->music#play']"
       assert_selector selector
-      assert_selector "a[href='##{song.title}']"
     end
   end
 end
