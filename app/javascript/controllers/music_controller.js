@@ -9,6 +9,7 @@ export default class extends Controller {
       title: "Avi Track",
       artist: "wooo Host",
       album: "Podcast Name",
+      artwork: [{ src: "http://139.59.31.175:80/cropped.jpg" }],
     });
     navigator.mediaSession.setActionHandler('nexttrack', function() {
       console.log('hello')
