@@ -1,61 +1,26 @@
-body {
-  background: #252526;
-  color: #fff;
-}
-
-.main {
-  margin: 0 auto;
-  width: 960px;
-}
-
 .songs-container {
-  height: 40vh;
+  max-height: 60vh;
   overflow: scroll;
-  scroll-behavior: smooth;
 }
 
-.container {
-  background: #181a1b;
-  color: white;
+.song {
+  display: block;
+  text-decoration: none;
 }
 
-.song:target {
-  animation-name: fade-text;
-  animation-duration: 5s;
+.search-container {
+  max-height: 20vh;
 }
 
-.current-song {
-  background: #FF7377 !important;
+.controls-container {
+  max-height: 20vh;
 }
 
-@keyframes fade-text {
-  from {
-    background: #3944BC;
-    color: white;
-  }
-
-  to {
-    background: inherit;
-    color: inherit;
-  }
+.submit-btn--half-block {
+  width: 50%;
 }
 
-@media screen and (max-width: 600px) {
-  html {
-    font-size: 18px;
-  }
-
-  .main {
-    margin: 0;
-    width: 100%;
-  }
-
-  .songs-container {
-    padding: 5px;
-    height: 60vh;
-  }
-
-  h1 {
-    margin: 3px;
-  }
+.input-container--block {
+  width: 100%;
 }
+

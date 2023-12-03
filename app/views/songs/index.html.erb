@@ -1,16 +1,25 @@
-<main class="main">
-  <h1>Songs</h1>
-  <div class='container paper' data-controller="songs">
-    <ul class='songs-container background-primary'>
-        <%= render SongComponent.with_collection(@songs) %>
-    </ul>
+<main class="main" data-controller="songs">
+  <turbo-frame id="search-and-songs">
+    <%= form_with url: songs_url, class: 'search-container row' do |f| %>
+      <div class="form-group input-container--block">
+        <%= f.text_field :search_tracks, class: 'input-block', placeholder: 'Search' %>
+      </div>
+      <div class='row input-container--block'>
+        <%= f.submit :search, class: 'submit-btn--half-block' %>
+        <%= f.submit :clear, class: 'submit-btn--half-block' %>
+      </div>
+    <% end %>
+    <div class='songs-container'>
+      <%= render SongComponent.with_collection(@songs) %>
+    </div>
+  </turbo-frame>
+  <div class="controls-container">
     <div id="audio-container" data-songs-target="audioContainer">
-      <p id="now-playing" data-songs-target="nowPlayingDisplayer">Click a song to play</p>
       <audio data-controller="mediaplayer" controls src=""></audio>
     </div>
     <div>
-      <button class="paper-btn" data-action="click->songs#prev">Prev</button>
-      <button class="paper-btn" data-action="click->songs#next">Next</button>
+      <button class="paper-btn btn-small" data-action="click->songs#prev">Prev</button>
+      <button class="paper-btn btn-small" data-action="click->songs#next">Next</button>
     </div>
   </div>
 </main>

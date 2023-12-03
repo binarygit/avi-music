@@ -1,5 +1,3 @@
-<%= tag.li do %>
-  <%= tag.a song.title, id: dom_id(song), 
-    class: 'song paper-btn btn-primary', 'data-action': 'click->songs#play',
-    'data-href': ('songs/' + song.title), 'data-id': song.id %> 
-<% end %>
+<%= tag.a song.title, id: dom_id(song), 
+  class: 'song padding-small', 'data-action': 'click->songs#play',
+  'data-href': ('songs/' + song.title), 'data-id': song.id %> 
