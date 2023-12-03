@@ -1,8 +1,8 @@
 <main class="main" data-controller="songs">
   <turbo-frame id="search-and-songs">
-    <%= form_with url: songs_url, class: 'search-container row' do |f| %>
+    <%= form_with url: songs_url, method: 'get', class: 'search-container row' do |f| %>
       <div class="form-group input-container--block">
-        <%= f.text_field :search_tracks, class: 'input-block', placeholder: 'Search' %>
+        <%= f.text_field :song_title, class: 'input-block', placeholder: 'Search', value: params[:song_title] %>
       </div>
       <div class='row input-container--block'>
         <%= f.submit :search, class: 'submit-btn--half-block' %>
