@@ -9,11 +9,11 @@
         <%= f.submit :clear, class: 'submit-btn--half-block' %>
       </div>
     <% end %>
-    <div class='songs-container'>
+    <div class='songs-container child-shadows child-shadows-hover'>
       <%= render SongComponent.with_collection(@songs) %>
     </div>
   </turbo-frame>
-  <div class="controls-container">
+  <div class="controls-container padding-small">
     <div id="audio-container" data-songs-target="audioContainer">
       <audio data-controller="mediaplayer" controls src=""></audio>
     </div>

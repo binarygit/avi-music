@@ -1,3 +1,7 @@
+body {
+  background: #41403e;
+}
+
 .songs-container {
   max-height: 60vh;
   overflow: scroll;
@@ -6,6 +10,8 @@
 .song {
   display: block;
   text-decoration: none;
+  cursor: pointer;
+  color: var(--primary);
 }
 
 .search-container {
