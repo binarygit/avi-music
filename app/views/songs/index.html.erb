@@ -1,16 +1,16 @@
-<main class="main" data-turbo="false">
+<main class="main">
   <h1>Songs</h1>
-  <div class='container paper' data-controller='music'>
+  <div class='container paper' data-controller="songs">
     <ul class='songs-container background-primary'>
         <%= render SongComponent.with_collection(@songs) %>
     </ul>
-    <div id="audio-container" data-music-target="audioContainer">
-      <p id="now-playing" data-music-target="nowPlayingDisplayer">Click a song to play</p>
+    <div id="audio-container" data-songs-target="audioContainer">
+      <p id="now-playing" data-songs-target="nowPlayingDisplayer">Click a song to play</p>
       <audio data-controller="mediaplayer" controls src=""></audio>
     </div>
     <div>
-      <button class="paper-btn" data-action="click->music#prev">Prev</button>
-      <button class="paper-btn" data-action="click->music#next">Next</button>
+      <button class="paper-btn" data-action="click->songs#prev">Prev</button>
+      <button class="paper-btn" data-action="click->songs#next">Next</button>
     </div>
   </div>
 </main>

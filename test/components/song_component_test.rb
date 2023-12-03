@@ -8,7 +8,7 @@ class SongComponentTest < ViewComponent::TestCase
     render_inline(SongComponent.with_collection(@songs))
 
     @songs.each do |song|
-      selector = "a[data-href='songs/#{song.title}'][data-id='#{song.id}'][data-action='click->music#play']"
+      selector = "a[data-href='songs/#{song.title}'][data-id='#{song.id}'][data-action='click->songs#play']"
       assert_selector selector
     end
   end
