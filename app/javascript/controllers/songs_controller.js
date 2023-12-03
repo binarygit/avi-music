@@ -8,7 +8,7 @@ export default class extends Controller {
     this.addCurrentSongClassTo(e.currentTarget)
     this.pauseCurrentSong();
     this.playSelectedSong(e.currentTarget.dataset.href);
-    this.displayNowPlaying(e.currentTarget.dataset.href);
+    //this.displayNowPlaying(e.currentTarget.dataset.href);
   }
 
   next() {

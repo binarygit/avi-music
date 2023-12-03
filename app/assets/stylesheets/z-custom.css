@@ -14,6 +14,10 @@ body {
   color: var(--primary);
 }
 
+.current-song {
+  background: var(--danger-light-10);
+}
+
 .search-container {
   max-height: 20vh;
 }
