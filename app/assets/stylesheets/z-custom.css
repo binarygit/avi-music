@@ -1,9 +1,18 @@
+html {
+  height: 100vh;
+}
+
 body {
   background: #41403e;
+  height: 100%;
+}
+
+.main {
+  height: 100%;
 }
 
 .songs-container {
-  max-height: 60vh;
+  max-height: 60%;
   overflow: scroll;
 }
 
@@ -19,11 +28,11 @@ body {
 }
 
 .search-container {
-  max-height: 20vh;
+  max-height: 20%;
 }
 
 .controls-container {
-  max-height: 20vh;
+  max-height: 20%;
 }
 
 .submit-btn--half-block {
